@@ -1,13 +1,37 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 
-const HeaderButton = ({ text }) => {
+// style
+import HeaderButtonStyle from './style/HeaderButtonStyle'
+
+const HeaderButton = ({
+    text,
+    btnColor,
+    textColor,
+    activeTab,
+    setactiveTab,
+}) => {
     return (
-        <View>
-            <TouchableOpacity>
-                <Text>{text}</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+            style={{
+                backgroundColor: activeTab == text ? 'black' : 'white',
+                paddingVertical: 8,
+                paddingHorizontal: 16,
+
+                borderRadius: 30,
+            }}
+            onPress={() => setactiveTab(text)}
+        >
+            <Text
+                style={{
+                    color: activeTab == text ? 'white' : 'black',
+                    fontSize: 15,
+                    fontWeight: '900',
+                }}
+            >
+                {text}
+            </Text>
+        </TouchableOpacity>
     )
 }
 
