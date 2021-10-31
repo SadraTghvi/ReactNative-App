@@ -11,7 +11,7 @@ export default function Header() {
     return (
         <View style={HeaderStyle.container}>
             <HeaderButton
-                text='Devliery'
+                text='Delivery'
                 btnColor={'black'}
                 textColor={'white'}
                 activeTab={activeTab}
