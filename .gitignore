@@ -42,9 +42,11 @@ node_modules/
 jspm_packages/
 package-lock.json
 
+.expo/
 assets/animations/
 assets/images/
-
+*.jpg
+*.png
 # TypeScript v1 declaration files
 typings/
 
