@@ -11,7 +11,7 @@ const RestaurantImage = ({image}) => {
         <>
             <Image
                 source={{
-                    uri: 'https://media.indebuurt.nl/westland/2019/11/18230755/sfeer-via-facebook.jpg',
+                    uri: image,
                 }}
                 style={{ width: '100%', height: 180 }}
             />
