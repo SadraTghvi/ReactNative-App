@@ -56,6 +56,7 @@ export default function RestaurantItems({ restaurantData }) {
                         <RestaurantInfo
                             name={restaurant.name}
                             rating={restaurant.rating}
+                            description={restaurant.phone}
                         />
                     </View>
                 </TouchableOpacity>
