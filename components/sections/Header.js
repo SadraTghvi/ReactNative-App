@@ -5,8 +5,7 @@ import HeaderButton from '../layout/HeaderButton'
 
 import HeaderStyle from './style/HeaderStyle'
 
-export default function Header() {
-    const [activeTab, setactiveTab] = useState('Delivery')
+export default function Header({ activeTab,setactiveTab }) {
 
     return (
         <View style={HeaderStyle.container}>
