@@ -9,12 +9,12 @@ const RestaurantInfo = ({name,rating,description}) => {
         <View style={RestaurantInfoStyle.info}>
             <View>
                 <Text style={RestaurantInfoStyle.text}>
-                    Farmhouse Kitchen Thai Sidjsa
+                    {name}
                 </Text>
-                <Text style={RestaurantInfoStyle.description}>30-45 min</Text>
+                <Text style={RestaurantInfoStyle.description}>Phone 📲 : {description}</Text>
             </View>
             <View style={RestaurantInfoStyle.rating}>
-                <Text>4.5</Text>
+                <Text>{rating}</Text>
             </View>
         </View>
     )
