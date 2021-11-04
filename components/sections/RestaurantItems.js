@@ -43,15 +43,13 @@ export const localRestaurants = [
 export default function RestaurantItems({ restaurantData }) {
     return (
         <>
-            {restaurantData.map((restaurant, index) => (
+            {restaurantData && restaurantData.map((restaurant, index) => (
                 <TouchableOpacity
                     key={index}
                     activeOpacity={1}
                     style={{ marginBottom: 30 }}
                 >
-                    <View
-                        style={RestaurantItemsStyle.Container}
-                    >
+                    <View style={RestaurantItemsStyle.Container}>
                         <RestaurantImage image={restaurant.image_url} />
                         <RestaurantInfo
                             name={restaurant.name}
@@ -61,6 +59,13 @@ export default function RestaurantItems({ restaurantData }) {
                     </View>
                 </TouchableOpacity>
             ))}
+            {restaurantData === null && (
+                <View style={RestaurantItemsStyle.Container}>
+                    <Text style={RestaurantItemsStyle.NoRestaurant}>
+                        No Restaurants Found...
+                    </Text>
+                </View>
+            )}
         </>
     )
 }
