@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 // icons 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+
 import RestaurantImageStyle from './style/RestaurantImageStyle'
 
 
