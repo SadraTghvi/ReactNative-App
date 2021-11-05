@@ -52,7 +52,7 @@ const Categories = () => {
                             key={index}
                             style={{ alignItems: 'center', marginRight: 30 }}
                         >
-                            <TouchableOpacity>
+                            <TouchableOpacity style={{ alignItems:"center" }}>
                                 <Image
                                     source={obj.image}
                                     style={{
