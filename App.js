@@ -6,6 +6,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import Home from './components/screens/Home'
 import RestaurantDetail from './components/screens/RestaurantDetail'
 
+import RootNavigation from "./Navigation"
+
 export default function App() {
-    return <RestaurantDetail />
+    return <RootNavigation />
 }
