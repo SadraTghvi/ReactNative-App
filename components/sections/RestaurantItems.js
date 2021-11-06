@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 
-// icons 
+// icons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import RestaurantImage from '../RestaurantDetails/RestaurantImage'
 import RestaurantInfo from '../RestaurantDetails/RestaurantInfo'
 
-// style 
+// style
 import RestaurantItemsStyle from './style/RestaurantItemsStyle'
 
 export const localRestaurants = [
@@ -40,25 +40,36 @@ export const localRestaurants = [
     },
 ]
 
-export default function RestaurantItems({ restaurantData }) {
+export default function RestaurantItems({ navigation, restaurantData }) {
     return (
         <>
-            {restaurantData && restaurantData.map((restaurant, index) => (
-                <TouchableOpacity
-                    key={index}
-                    activeOpacity={1}
-                    style={{ marginBottom: 30 }}
-                >
-                    <View style={RestaurantItemsStyle.Container}>
-                        <RestaurantImage image={restaurant.image_url} />
-                        <RestaurantInfo
-                            name={restaurant.name}
-                            rating={restaurant.rating}
-                            description={restaurant.phone}
-                        />
-                    </View>
-                </TouchableOpacity>
-            ))}
+            {restaurantData &&
+                restaurantData.map((restaurant, index) => (
+                    <TouchableOpacity
+                        key={index}
+                        activeOpacity={1}
+                        style={{ marginBottom: 30 }}
+                        onPress={() =>
+                            navigation.navigate('RestaurantDetail', {
+                                name: restaurant.name,
+                                image: restaurant.image_url,
+                                price: restaurant.price,
+                                reviews: restaurant.review_count,
+                                rating: restaurant.rating,
+                                categories: restaurant.categories,
+                            })
+                        }
+                    >
+                        <View style={RestaurantItemsStyle.Container}>
+                            <RestaurantImage image={restaurant.image_url} />
+                            <RestaurantInfo
+                                name={restaurant.name}
+                                rating={restaurant.rating}
+                                description={restaurant.phone}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                ))}
             {restaurantData === null && (
                 <View style={RestaurantItemsStyle.Container}>
                     <Text style={RestaurantItemsStyle.NoRestaurant}>
