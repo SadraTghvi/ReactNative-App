@@ -13,6 +13,6 @@ export default StyleSheet.create({
         fontSize: 15.5,
         fontWeight: "400",
         marginTop: 10,
-        marginHorizontal:15,
+        marginHorizontal:20,
     }
 })
