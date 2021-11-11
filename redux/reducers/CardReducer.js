@@ -12,14 +12,12 @@ const CardReducer = (state = initialState, { type, payload }) => {
             let newState = { ...state }
 
             if (payload.CheckBoxValue) {
-                console.log('ADD TO CART')
 
                 newState = {
                     items: [...newState.items, payload],
                     restaurantName: payload.restaurantName,
                 }
             } else {
-                console.log('REMOVE FROM CART')
                 newState = {
                     items: [
                         ...newState.items.filter(
@@ -29,7 +27,6 @@ const CardReducer = (state = initialState, { type, payload }) => {
                     restaurantName: payload.restaurantName,
                 }
             }
-            console.log('New state 👉', newState)
             return newState
         }
 
