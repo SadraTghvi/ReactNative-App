@@ -2,6 +2,15 @@ import React from 'react'
 import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import { Divider } from 'react-native-elements'
 
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+
+// action types
+import { ADD_TO_CARD } from '../../redux/action-types/CardActions'
+
+// actions
+import { Cards } from '../../redux/actions/Cards'
+
 // layouts
 import FoodImage from '../layout/FoodImage'
 import FoodInfo from '../layout/FoodInfo'
@@ -63,7 +72,21 @@ const foods = [
     },
 ]
 
-const MenuItems = () => {
+const MenuItems = ({ restaurantName }) => {
+    const dispatch = useDispatch()
+    const items = useSelector(state => state.items)
+
+    const selectItem = (item, CheckBoxValue) => {
+        dispatch({
+            type: ADD_TO_CARD,
+            payload: {
+                ...item,
+                restaurantName: restaurantName,
+                CheckBoxValue: CheckBoxValue,
+            },
+        })
+    }
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             {foods.map((food, index) => (
@@ -72,6 +95,9 @@ const MenuItems = () => {
                         <BouncyCheckBox
                             iconStyle={MenuItemStyles.icon}
                             fillColor='green'
+                            onPress={CheckBoxValue =>
+                                selectItem(food, CheckBoxValue)
+                            }
                         />
                         <FoodInfo food={food} />
                         <FoodImage food={food} />
