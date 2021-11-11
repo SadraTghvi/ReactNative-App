@@ -11,4 +11,8 @@ export default StyleSheet.create({
         borderRadius: 0,
         borderColor: 'lightgray',
     },
+    titleStyle: {
+        fontSize: 19,
+        fontWeight: '600',
+    },
 })
