@@ -16,7 +16,7 @@ const SearchBar = ({ cityHandler }) => {
             <TextInput
                 placeholder='Search City...'
                 onChangeText={e => cityHandler(e.split(" ")[0])}
-                onSubmitEditing={e => console.log("submit")}
+                // onSubmitEditing={e => console.log("submit")}
                 style={SearchBarStyle.searchBar}
             ></TextInput>
             <View style={SearchBarStyle.searchBarIconLeft}>
