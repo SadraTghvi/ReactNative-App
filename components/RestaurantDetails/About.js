@@ -11,7 +11,7 @@ const About = ({ route }) => {
     const formattedCategories = categories.map(cat => cat.title).join(' • ')
     const description = `${formattedCategories} ${
         price ? ' • ' + price : ''
-    } • 🎫 • ${rating} ⭐ (${reviews}+)`
+    } • 🎫 • ${rating ? rating : ''} ⭐ (${reviews ? reviews : ''}+)`
 
     return (
         <View>
