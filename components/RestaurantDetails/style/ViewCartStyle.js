@@ -7,7 +7,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        bottom: 320,
+        bottom: 360,
         zIndex: 999,
     },
     wrapper: {
