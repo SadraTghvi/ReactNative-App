@@ -10,8 +10,6 @@ const BottomTabs = () => {
     return (
         <View style={BottomTabsStyle.container}>
             <BottomIcons icon={'home'} text={'Home'} />
-            <BottomIcons icon={'search'} text={'Browse'} />
-            <BottomIcons icon={'shopping-bag'} text={'Grocery'} />
             <BottomIcons icon={'receipt'} text={'Orders'} />
             <BottomIcons icon={'user'} text={'Account'} />
         </View>
