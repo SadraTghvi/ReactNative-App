@@ -19,7 +19,6 @@ const ViewCart = () => {
           })
         : 0
 
-    console.log(totalPrice)
 
     return (
         <>
@@ -27,6 +26,7 @@ const ViewCart = () => {
                 <View style={ViewCartStyle.container}>
                     <TouchableOpacity style={ViewCartStyle.wrapper}>
                         <Text style={ViewCartStyle.text}>View Cart 🛒</Text>
+                        <Text style={ViewCartStyle.price}> ${totalPriceUSD}</Text>
                     </TouchableOpacity>
                 </View>
             ) : (
