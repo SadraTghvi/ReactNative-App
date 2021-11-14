@@ -77,7 +77,7 @@ const foods = [
 
 const MenuItems = ({ restaurantName }) => {
     const dispatch = useDispatch()
-    const items = useSelector(state => state.items)
+    const items = useSelector(state => state.CardReducer.items)
 
     const selectItem = (item, CheckBoxValue) => {
         dispatch({
@@ -88,6 +88,10 @@ const MenuItems = ({ restaurantName }) => {
                 CheckBoxValue: CheckBoxValue,
             },
         })
+    }
+
+    const isFoodInCard = (food,items) => {
+        return items.some(item => item.title === food.title);
     }
 
     return (
@@ -101,6 +105,7 @@ const MenuItems = ({ restaurantName }) => {
                             onPress={CheckBoxValue =>
                                 selectItem(food, CheckBoxValue)
                             }
+                            isChecked={isFoodInCard(food, items)}
                         />
                         <FoodInfo food={food} />
                         <FoodImage food={food} />
