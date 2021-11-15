@@ -31,4 +31,34 @@ export default StyleSheet.create({
         position: 'absolute',
         right: 20,
     },
+    
+    modalContainer:{
+        flex:1,
+        justifyContent:"flex-end",
+        backgroundColor:"rgba(0,0,0,0.7)"
+    },  
+    modalCheckOutContainer:{
+        backgroundColor:"white",
+        padding:16,
+        height:500,
+        borderWidth:1,
+    },
+    modalCheckOutButton:{
+        textAlign:"center",
+        fontWeight:"600",
+        fontSize:18,
+        marginBottom:10,
+    },
+
+    subtotalContainer:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+        marginTop:15
+    },
+    subtotalText:{
+        textAlign:"center",
+        fontWeight:"700",
+        fontSize:20,
+        marginBottom:10,
+    },
 })
